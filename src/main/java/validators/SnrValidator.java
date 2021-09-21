@@ -1,6 +1,9 @@
 package validators;
 
-import java.time.format.DateTimeFormatter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 
 
 
@@ -13,10 +16,12 @@ public class SnrValidator extends PnrValidator {
         int day = Integer.parseInt(number.substring(4,6)) - 60;
         number = number.substring(0,4) + day;
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyMMdd");
+        DateFormat sdf = new SimpleDateFormat("yyMMdd");
+        sdf.setLenient(false);
+
         try {
-            dtf.parse(number);
-        } catch (Exception e) {
+            sdf.parse(number);
+        } catch (ParseException e) {
             return false;
         }
         return true;
