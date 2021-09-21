@@ -13,9 +13,12 @@ public class Runner {
         OnrValidator onrValidator = new OnrValidator();
         SnrValidator snrValidator = new SnrValidator();
 
-        String next = "";
-        while (next != "end") {
+        System.out.println("Mata in data:");
+        String next;
+        while (true) {
             next = scanner.nextLine();
+            if (next.equalsIgnoreCase("end"))
+                break;
             if (pnrValidator.validityCheck(next))
                 System.out.println(next + " är ett giltigt personnummer");
             else
