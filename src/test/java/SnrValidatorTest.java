@@ -1,7 +1,6 @@
-package validators;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import validators.SnrValidator;
 
 import java.util.List;
 
@@ -13,7 +12,7 @@ class SnrValidatorTest {
     @Test
     void validityCheckValidNumbers() {
         for (String num : validNumbers) {
-            Assertions.assertEquals(true, snrValidator.validityCheck(num));
+            Assertions.assertTrue(snrValidator.validityCheck(num));
         }
     }
 }

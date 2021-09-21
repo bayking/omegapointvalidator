@@ -1,7 +1,6 @@
-package validators;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import validators.OnrValidator;
 
 import java.util.List;
 
@@ -17,7 +16,7 @@ class OnrValidatorTest {
     @Test
     void validityCheckValidNumbers() {
         for (String num : validNumbers) {
-            Assertions.assertEquals(true, onrValidator.validityCheck(num));
+            Assertions.assertTrue(onrValidator.validityCheck(num));
         }
     }
 }

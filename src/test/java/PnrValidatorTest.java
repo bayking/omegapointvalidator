@@ -1,7 +1,6 @@
-package validators;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import validators.PnrValidator;
 
 import java.util.List;
 
@@ -33,14 +32,14 @@ class PnrValidatorTest {
     @Test
     void validityCheckValidNumbers() {
         for (String num : validNumbers) {
-            Assertions.assertEquals(true, pnrValidator.validityCheck(num));
+            Assertions.assertTrue(pnrValidator.validityCheck(num));
         }
     }
 
     @Test
     void validityCheckInvalidNumbers() {
         for (String num : invalidNumbers) {
-            Assertions.assertEquals(false, pnrValidator.validityCheck(num));
+            Assertions.assertFalse(pnrValidator.validityCheck(num));
         }
     }
 }
